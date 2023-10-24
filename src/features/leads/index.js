@@ -50,50 +50,140 @@ function Leads(){
     return(
         <>
             
-            <TitleCard title="Current Leads" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
-
-                {/* Leads List in table format loaded from slice after api call */}
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email Id</th>
-                        <th>Created At</th>
-                        <th>Status</th>
-                        <th>Assigned To</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            leads.map((l, k) => {
-                                return(
-                                    <tr key={k}>
-                                    <td>
-                                        <div className="flex items-center space-x-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle w-12 h-12">
-                                                    <img src={l.avatar} alt="Avatar" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="font-bold">{l.first_name}</div>
-                                                <div className="text-sm opacity-50">{l.last_name}</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>{l.email}</td>
-                                    <td>{moment(new Date()).add(-5*(k+2), 'days').format("DD MMM YY")}</td>
-                                    <td>{getDummyStatus(k)}</td>
-                                    <td>{l.last_name}</td>
-                                    <td><button className="btn btn-square btn-ghost" onClick={() => deleteCurrentLead(k)}><TrashIcon className="w-5"/></button></td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
-                </table>
+            <TitleCard title="Trucks" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
+            <div className="flex bg-red gap-3">
+                <div className="card rounded w-96 bg-base-100 shadow-xl mb-3">
+                    <figure><img src="https://images.pexels.com/photos/11087837/pexels-photo-11087837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Truck 1" /></figure>
+                    <div className="flex">
+                        <div>
+                            <div className="card-body">
+                                <h2 className="card-title">Truck</h2>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="card-actions mt-10">
+                                <button className="btn btn-primary">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="card rounded w-96 bg-base-100 shadow-xl mb-3">
+                    <figure><img src="https://images.pexels.com/photos/11087837/pexels-photo-11087837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Truck 1" /></figure>
+                    <div className="flex">
+                        <div>
+                            <div className="card-body">
+                                <h2 className="card-title">Truck</h2>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="card-actions mt-10">
+                                <button className="btn btn-primary">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="card rounded w-96 bg-base-100 shadow-xl mb-3">
+                    <figure><img src="https://images.pexels.com/photos/11087837/pexels-photo-11087837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Truck 1" /></figure>
+                    <div className="flex">
+                        <div>
+                            <div className="card-body">
+                                <h2 className="card-title">Truck</h2>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="card-actions mt-10">
+                                <button className="btn btn-primary">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="card rounded w-96 bg-base-100 shadow-xl mb-3">
+                    <figure><img src="https://images.pexels.com/photos/11087837/pexels-photo-11087837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Truck 1" /></figure>
+                    <div className="flex">
+                        <div>
+                            <div className="card-body">
+                                <h2 className="card-title">Truck</h2>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="card-actions mt-10">
+                                <button className="btn btn-primary">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </TitleCard>
+            <TitleCard title="Trains" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
+            <div className="flex bg-red gap-3">
+                <div className="card rounded w-96 bg-base-100 shadow-xl mb-3">
+                    <figure><img src="https://images.pexels.com/photos/11560608/pexels-photo-11560608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Train 1" /></figure>
+                    <div className="flex">
+                        <div>
+                            <div className="card-body">
+                                <h2 className="card-title">Train</h2>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="card-actions mt-10">
+                                <button className="btn btn-primary">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="card rounded w-96 bg-base-100 shadow-xl mb-3">
+                    <figure><img src="https://images.pexels.com/photos/14269125/pexels-photo-14269125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Train 2" /></figure>
+                    <div className="flex">
+                        <div>
+                            <div className="card-body">
+                                <h2 className="card-title">Train</h2>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="card-actions mt-10">
+                                <button className="btn btn-primary">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="card rounded w-96 bg-base-100 shadow-xl mb-3">
+                    <figure><img src="https://images.pexels.com/photos/11560608/pexels-photo-11560608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Train 3" /></figure>
+                    <div className="flex">
+                        <div>
+                            <div className="card-body">
+                                <h2 className="card-title">Train</h2>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="card-actions mt-10">
+                                <button className="btn btn-primary">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="card rounded w-96 bg-base-100 shadow-xl mb-3">
+                    <figure><img src="https://images.pexels.com/photos/11560608/pexels-photo-11560608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Train 4" /></figure>
+                    <div className="flex">
+                        <div>
+                            <div className="card-body">
+                                <h2 className="card-title">Train</h2>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="card-actions mt-10">
+                                <button className="btn btn-primary">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             </TitleCard>
         </>
