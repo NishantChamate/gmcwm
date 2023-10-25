@@ -36,8 +36,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/documentation" element={<Documentation />} />
-          
           {/* Place new routes over this */}
           <Route path="/app/*" element={<Layout />} />
 
