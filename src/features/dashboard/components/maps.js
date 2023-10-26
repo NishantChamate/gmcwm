@@ -65,8 +65,6 @@
 // //     }
 // //   }, [isLoaded, origin, destination]);
 
-  
-
 // //   return (
 // //     <TitleCard title={"Live Tracking"}>
 // //       <div className="App">
@@ -80,10 +78,6 @@
 // //           >
 // //             {/* <Marker position={origin} icon={customMarker} /> */}
 // //             {/* <Marker position={destination} /> */}
-
-            
-
-              
 
 // //             {directions && (
 // //               <DirectionsRenderer
@@ -197,14 +191,21 @@
 
 // export default Maps;
 
-
 import React, { useEffect, useMemo, useState } from "react";
-import { GoogleMap, Marker, useLoadScript, DirectionsService, DirectionsRenderer } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  Marker,
+  useLoadScript,
+  DirectionsService,
+  DirectionsRenderer,
+} from "@react-google-maps/api";
 import TitleCard from "../../../components/Cards/TitleCard.js";
 
 const Maps = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY || "",
+    googleMapsApiKey:
+      process.env.REACT_APP_GOOGLE_API_KEY ||
+      "AIzaSyB9GJgoPikGy817TDxyYnUCvo3G4f6LzhQ",
   });
 
   const [directions, setDirections] = useState(null);
@@ -234,7 +235,12 @@ const Maps = () => {
         {
           origin: origin,
           destination: destination,
-          travelMode: "DRIVING", // Specify "DRIVING" for car directions
+          travelMode: "DRIVING",
+          drivingOptions: {
+            departureTime: new Date("2023-10-15T15:01:23.045123456Z"),
+            trafficModel: "bestguess",
+          },
+          provideRouteAlternatives: true, // Set to true if you want multiple route alternatives
         },
         (response, status) => {
           if (status === "OK") {
